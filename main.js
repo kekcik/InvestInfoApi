@@ -10,8 +10,7 @@ const requestListener = function (req, res) {
       res.writeHead(200, {'Content-Type': 'image/jpeg'});
       res.end(data);
     })
-    
-  } else if (req.url.includes(".well-known/acme-challenge/3xrWaHkY7pCsSPpLmlO47xiScbNDU6tOBvbesOoN0vs")) {
+  } else if (req.url.includes("well-known/acme-challenge")) {
     res.writeHead(200);
     res.end("3xrWaHkY7pCsSPpLmlO47xiScbNDU6tOBvbesOoN0vs.J1C9f7bOoW-Ex3EZ3zlNfO1P6SIHBOR9l-XOXStLM20");
   } else if (req.url.includes("/rates/")) {
