@@ -11,9 +11,9 @@ const requestListener = function (req, res) {
       res.end(data);
     })
     
-  } else if (req.url.includes("well-known/acme-challenge/3AcOkOppE87gpJeRUoBQJWJqlxiP1VgMHYomnP2M1nQ")) {
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end("3AcOkOppE87gpJeRUoBQJWJqlxiP1VgMHYomnP2M1nQ.J1C9f7bOoW-Ex3EZ3zlNfO1P6SIHBOR9l-XOXStLM20");
+  } else if (req.url.includes(".well-known/acme-challenge/3xrWaHkY7pCsSPpLmlO47xiScbNDU6tOBvbesOoN0vs")) {
+    res.writeHead(200);
+    res.end("3xrWaHkY7pCsSPpLmlO47xiScbNDU6tOBvbesOoN0vs.J1C9f7bOoW-Ex3EZ3zlNfO1P6SIHBOR9l-XOXStLM20");
   } else if (req.url.includes("/rates/")) {
 
     fs.readFile("rates.json", function(err, data) {
