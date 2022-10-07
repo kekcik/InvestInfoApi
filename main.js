@@ -71,12 +71,12 @@ app.get('/rates', async (req, res) => {
     })
 })
 
-app.get('/push', async (req, res) => {
+app.get('/push/:token', async (req, res) => {
     let notification = new Notification();
     notification.alert = "¡Hola, тестовый пуш с сервера";
     notification.topic = "trofimov.mobi.InvestInfo"
 
-    apnProvider.send(notification, [deviceToken]).then( (response) => { 
+    apnProvider.send(notification, [req.params.token]).then( (response) => { 
         res.writeHead(200);
         console.log(response);
         res.end("notififcation was sended on " + response);
