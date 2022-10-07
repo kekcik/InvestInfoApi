@@ -1,6 +1,6 @@
 import { createServer } from 'http'
 import { readFile } from 'fs'
-import { Provider } from 'apn'
+import { Provider, Notification } from 'apn'
 import express from 'express'
 
 // const fs = require('fs');
@@ -72,7 +72,7 @@ app.get('/rates', async (req, res) => {
 })
 
 app.get('/push', async (req, res) => {
-    let notification = new apn.Notification();
+    let notification = new Notification();
     notification.alert = "¡Hola, тестовый пуш с сервера";
     notification.topic = "trofimov.mobi.InvestInfo"
 
